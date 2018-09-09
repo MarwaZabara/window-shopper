@@ -42,6 +42,7 @@ class MainVC: UIViewController {
         HoursLbl.isHidden = false
         ClearBtn.isHidden = false
         
+        
      }
     
     @IBAction func ClearCalculatorPressed(_ sender: Any) {
