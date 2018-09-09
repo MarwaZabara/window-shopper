@@ -15,6 +15,9 @@ class MainVC: UIViewController {
     @IBOutlet weak var Result: UILabel!
     @IBOutlet weak var HoursLbl: UILabel!
     @IBOutlet weak var ClearBtn: UIButton!
+
+    
+   
     
     
     override func viewDidLoad() {
@@ -37,10 +40,18 @@ class MainVC: UIViewController {
             if let price = Double(PriceTxt),let wage = Double(WageTxt){
                 view.endEditing(true)
             Result.text = "\(Wage.GetHours(ForWage: wage, AndPrice: price))"
-            }}
-        Result.isHidden = false
-        HoursLbl.isHidden = false
-        ClearBtn.isHidden = false
+                Result.isHidden = false
+                HoursLbl.isHidden = false
+                ClearBtn.isHidden = false
+            }
+            else {
+                let Alert = UIAlertController(title: "Invalid input", message: "Please make sure to enter numbers only", preferredStyle: .alert)
+                Alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(Alert, animated: true)
+            }
+        }
+       
+        
         
         
      }
